@@ -1,40 +1,129 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Next.js Project Setup and Basics
+
+This repository contains a comprehensive Next.js application built with TypeScript and Tailwind CSS. It demonstrates modern web development practices including component-based architecture, routing, API integration, and responsive design.
+
+## Features
+
+- **Next.js with Pages Router**: Modern React framework with file-based routing
+- **TypeScript**: Full type safety and better development experience
+- **Tailwind CSS**: Utility-first CSS framework for responsive design
+- **Reusable Components**: Modular and maintainable component architecture
+- **API Integration**: Fetching data from external APIs (JSONPlaceholder)
+- **Interactive UI**: Modals, forms, and dynamic content management
+
+## Project Structure
+
+```
+alx-project-0x02/
+├── components/
+│   ├── common/
+│   │   ├── Button.tsx
+│   │   ├── Card.tsx
+│   │   ├── PostCard.tsx
+│   │   ├── PostModal.tsx
+│   │   └── UserCard.tsx
+│   └── layout/
+│       └── Header.tsx
+├── interfaces/
+│   └── index.ts
+├── pages/
+│   ├── _app.tsx
+│   ├── _document.tsx
+│   ├── about.tsx
+│   ├── home.tsx
+│   ├── index.tsx
+│   ├── posts.tsx
+│   └── users.tsx
+├── public/
+│   └── assets/
+│       └── images/
+├── styles/
+│   └── globals.css
+├── .eslintrc.json
+├── next.config.js
+├── package.json
+├── README.md
+└── tsconfig.json
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js (v16 or later)
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd alx-project-0x02
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev -- -p 3000
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Pages
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Home** (`/`): Welcome page with project overview
+- **Home** (`/home`): Interactive page with cards and modal for adding posts
+- **About** (`/about`): Information about the project with button component demos
+- **Posts** (`/posts`): Displays posts fetched from JSONPlaceholder API
+- **Users** (`/users`): Displays users fetched from JSONPlaceholder API
 
-## Learn More
+## Components
 
-To learn more about Next.js, take a look at the following resources:
+### Common Components
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+- **Button**: Reusable button with different sizes and shapes
+- **Card**: Basic card component for displaying content
+- **PostCard**: Specialized card for displaying post information
+- **PostModal**: Modal component for adding new posts
+- **UserCard**: Specialized card for displaying user information
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Layout Components
 
-## Deploy on Vercel
+- **Header**: Navigation header with links to all pages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Technologies Used
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+- **Next.js**: React framework for production
+- **TypeScript**: Type-safe JavaScript
+- **Tailwind CSS**: Utility-first CSS framework
+- **ESLint**: Code linting and quality assurance
+
+## API Integration
+
+The application fetches data from:
+- **JSONPlaceholder API**: For posts and users data
+- **Posts API**: `https://jsonplaceholder.typicode.com/posts`
+- **Users API**: `https://jsonplaceholder.typicode.com/users`
+
+## Development
+
+### Code Quality
+
+- ESLint configuration for consistent code style
+- TypeScript for type safety
+- Component-based architecture for maintainability
+
+### Best Practices
+
+- Reusable components with TypeScript interfaces
+- Responsive design with Tailwind CSS
+- Clean separation of concerns
+- Proper error handling for API calls
+
+## License
+
+This project is part of the ALX curriculum and is for educational purposes.
