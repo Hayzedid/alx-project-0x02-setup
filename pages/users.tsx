@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Header from '../components/layout/Header';
+import Header from '@/components/layout/Header';
 import UserCard from '../components/common/UserCard';
 import { UserProps } from '../interfaces';
 
@@ -92,4 +92,24 @@ export default function Users() {
       </main>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/users');
+    const users = await response.json();
+    
+    return {
+      props: {
+        users: users
+      },
+      revalidate: 60 // Revalidate every 60 seconds
+    };
+  } catch (error) {
+    return {
+      props: {
+        users: []
+      }
+    };
+  }
 }
