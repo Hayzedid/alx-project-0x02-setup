@@ -94,7 +94,7 @@ export default function Users() {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   try {
     const response = await fetch('https://jsonplaceholder.typicode.com/users');
     const users = await response.json();
@@ -102,7 +102,8 @@ export async function getServerSideProps() {
     return {
       props: {
         users: users
-      }
+      },
+      revalidate: 60
     };
   } catch (error) {
     return {

@@ -85,7 +85,7 @@ export default function Posts() {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   try {
     const response = await fetch('https://jsonplaceholder.typicode.com/posts');
     const posts = await response.json();
@@ -93,7 +93,8 @@ export async function getServerSideProps() {
     return {
       props: {
         posts: posts.slice(0, 10)
-      }
+      },
+      revalidate: 60
     };
   } catch (error) {
     return {
